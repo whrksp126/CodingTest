@@ -23,14 +23,14 @@
     // numbers = input[1].split(' ');
     let numbers = [ '1', '10', '4', '9', '2', '3', '8', '5', '7', '6' ];
 
-    result = [];
+    result = '';
     for (let i = 0; i < N; i++) {
       if (Number(numbers[i]) < X) {
-        result.push(numbers[i]);
+        result += numbers[i] + ' ';
       }
     }
 
-    console.log(result.join(' '));
+    console.log(result);
 
 
 
