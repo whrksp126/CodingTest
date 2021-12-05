@@ -13,9 +13,32 @@
       '3 70 90 80',
       '3 70 90 81',
       '9 100 99 98 97 96 95 94 93 91'
-    ]
-    let input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
+    ];
+    // let fs = require('fs');
+// let input = fs.readFileSync('/dev/stdin').toString().split('\n');
 
+let num = Number(input[0]);
+
+for (let i = 1; i <= num; i++) {
+  let pro = input[i].split(' ');
+  let proNum = Number(pro[0]);
+  let sum = 0;
+
+  for (let j = 1; j <= proNum; j++) {
+    sum += Number(pro[j]);
+  }
+  let ave = sum / proNum;
+
+  let high = 0;
+  for (let k = 1; k <= proNum; k++) {
+    if (ave < pro[k]) {
+      high++;
+    }
+  }
+  
+  result = (high / proNum * 100).toFixed(3);
+  console.log(result + '%');
+}
     
   </script>
 </head>
