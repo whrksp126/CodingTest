@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+   <!-- <script>
+
+     const input = 500;
+    // const fs = rquire('fs')
+    // const input = fs.readFileSync('/dev/stdin').toString()
+    const N = Number(input);
+    let array = [];
+    let result = 0;
+    for(let i=1; i<=N; i++){
+      let standard = 0;
+      // console.log(i);
+      if( i < 100) {
+        array.push(i);
+      } else {
+        const soloNum = String(i).split('');
+        // console.log(i+'의   '+'length 0은  ' + soloNum[0]+',   length 1은  ' + soloNum[1] + ',   length 2은  '  +  soloNum[2])
+        for(let j = 1; j < soloNum.length-1; j++){
+          // console.log(soloNum[j])
+          let firDef = soloNum[0] - soloNum[j];
+          let secDef = soloNum[j] - soloNum[soloNum.length -1];
+
+          // console.log('soloNum,   '+  soloNum)
+          // console.log('soloNum[0],   '+  soloNum[0])
+          // console.log('soloNum[j],   '+  soloNum[j])
+          // console.log('soloNum[soloNum.length -1]   '+ soloNum[soloNum.length -1])
+          // console.log('firDef,   '+ firDef)
+          // console.log('secDef   '+ secDef)
+          if(firDef === secDef){
+            array.push(i)
+          }
+        }
+
+      }
+
+    }
+    console.log(array.length)
+    // console.log(array)
+
+
+
+  </script> -->   
+  <!-- //----------------------------- -->
+  <!-- <script>
+
+     const input = 1000;
+    // const fs = rquire('fs')
+    // const input = fs.readFileSync('/dev/stdin').toString()
+    const N = Number(input);
+    let array = [];
+    let result = 0;
+    for(let i=1; i<=N; i++){
+      if( i < 100) {
+        array.push(i);
+      } else {
+        const soloNum = String(i).split('');
+        for(let j = 1; j < soloNum.length-1; j++){
+          let firDef = soloNum[0] - soloNum[j];
+          let secDef = soloNum[j] - soloNum[soloNum.length -1];
+          if(firDef === secDef){
+            array.push(i)
+          }
+        }
+      }
+    }
+    console.log(array.length)
+  </script> -->
+  <!-- //------------------------ -->
+  <script>
+let fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString();
+
+let num = Number(input);
+
+function hansu(n){
+    let count = 0;
+    for(let i = 1; i <= n; i++){
+        let hundredNumber = Math.floor((i % 1000) / 100);
+        let tenNumber = Math.floor((i % 100) / 10);
+        let oneNumber = i % 10;
+
+        if(i < 100){ // n이 한자리 수 혹은 두자리 수 일 때
+            count++;
+        }else if(100 <= i && i < 1000){
+            if (hundredNumber - tenNumber === tenNumber - oneNumber){
+                count++;
+            }
+        }
+    }
+    return count;
+}
+console.log(hansu(num));
+ </script>
+</head>
+<body>
+  <pre>
+    한수
+시간 제한	메모리 제한	제출	정답	맞힌 사람	정답 비율
+2 초	128 MB	92899	49128	41350	52.870%
+문제
+어떤 양의 정수 X의 각 자리가 등차수열을 이룬다면, 그 수를 한수라고 한다. 등차수열은 연속된 두 개의 수의 차이가 일정한 수열을 말한다. N이 주어졌을 때, 1보다 크거나 같고, N보다 작거나 같은 한수의 개수를 출력하는 프로그램을 작성하시오. 
+
+입력
+첫째 줄에 1,000보다 작거나 같은 자연수 N이 주어진다.
+
+출력
+첫째 줄에 1보다 크거나 같고, N보다 작거나 같은 한수의 개수를 출력한다.
+
+예제 입력 1 
+110
+예제 출력 1 
+99
+예제 입력 2 
+1
+예제 출력 2 
+1
+예제 입력 3 
+210
+예제 출력 3 
+105
+예제 입력 4 
+1000
+예제 출력 4 
+144
+예제 입력 5 
+500
+예제 출력 5 
+119
+  </pre>
+</body>
+</html>
