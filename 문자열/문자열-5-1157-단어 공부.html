@@ -25,16 +25,17 @@
       // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
       // 입니다.
     }
-    console.log( result)
+    console.log('result',result)
     console.log(...result)
     const max = Math.max(...result);
-    console.log(max)
+    console.log('max', max)
     const index = result.indexOf(max);
-    console.log(index)
+    console.log('index', index)
     let isSame = false;
 
     for (let j = 0; j < 26; j++) {
       if (result[j] === max && index !== j) {
+        // 값은 같지만 index가 다르면 동일한 값이 더 있는 것 이므로
         isSame = true;
         break;
       }
