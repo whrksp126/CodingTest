@@ -7,18 +7,18 @@
   <title>Document</title>
   <script>
     const fs = require('fs');
-const input = fs.readFileSync('/dev/stdin').toString()
-let x = Number(input);
-let counter = 0;
-while(x > 0){
-    counter++;
-    x = x - counter;
-}
-if(counter % 2 === 0){
-     console.log(`${counter + x}/${1 + -x}`)  
-} else {
-     console.log(`${1 + -x}/${counter + x}`)
-}
+    const input = fs.readFileSync('/dev/stdin').toString()
+    let x = Number(input);
+    let counter = 0;
+    while(x > 0){
+        counter++;
+        x = x - counter;
+    }
+    if(counter % 2 === 0){
+         console.log(`${counter + x}/${1 + -x}`)  
+    } else {
+         console.log(`${1 + -x}/${counter + x}`)
+    }
   </script>
 </head>
 <body>
