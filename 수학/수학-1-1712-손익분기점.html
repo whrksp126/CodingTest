@@ -6,16 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script>    
-    let input = require('fs').readFileSync('/dev/stdin').toString().split(' ');
+//     let input = require('fs').readFileSync('/dev/stdin').toString().split(' ');
 
-const A = input[0] * 1;
-const B = input[1] * 1;
-const C = input[2] * 1;
+// const A = input[0] * 1;
+// const B = input[1] * 1;
+// const C = input[2] * 1;
 
-const margin = C - B;
-const count = Math.floor(A / margin) + 1
+// const margin = C - B;
+// const count = Math.floor(A / margin) + 1
 
-console.log(margin <= 0 ? -1 : count);
+// console.log(margin <= 0 ? -1 : count);
+
+
+// let input = require('fs').readFileSync('/dev/stdin').toString().split(' ');
+let A = 100;
+let B = 7;
+let C = 40;
+let result = A/(C-B)
+if (C-B <= 0) {
+    console.log('-1');
+} else {
+  function fits(x, y) {
+    if (Number.isInteger(result)) {
+      return true;
+    } return false;
+  }
+    let fun = fits();
+    if(fun === true){
+      console.log(result+1);
+    }else{
+      console.log(Math.ceil(result));
+    }
+}
   </script>
 </head>
 <body>
